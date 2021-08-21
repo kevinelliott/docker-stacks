@@ -1,0 +1,20 @@
+version: "3"
+services:  
+  node:
+    image: tezos/tezos:v10.0
+    command: ["tezos-node"]
+    hostname: node
+    ports:
+      - "8732:8732"
+      - "9732:9732/udp"
+    volumes: 
+       - "/mnt/ssd/tezos/node:/var/run/tezos/node"
+    deploy:   
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4096M
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
