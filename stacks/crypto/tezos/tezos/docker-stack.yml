@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:  
   node:
     image: tezos/tezos:v10.2
