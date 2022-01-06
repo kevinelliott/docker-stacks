@@ -9,7 +9,7 @@ services:
       - "8732:8732"
       - "9732:9732/udp"
     volumes: 
-       - "/tezos/node:/var/run/tezos/node"
+       - "/mnt/ssd/tezos/node:/var/run/tezos/node"
     deploy:   
       resources:
         limits:
